@@ -2,6 +2,7 @@ const form = document.querySelector('#form')
 const downloadButton = document.querySelector('#downloadButton')
 const loader = document.querySelector('calcite-loader')
 const qrcodeContainer = document.querySelector('#qrcode-wrapper')
+const informationButton = document.querySelector('#informationButton')
 
 let qrcode;
 let qrcodeImage;
@@ -57,4 +58,11 @@ const hideLoader = () => {
     loader.style.display = 'none'
 }
 
+const displayInfo = (e) => {
+  const infoDialog = document.querySelector('#infoDialog')
+  infoDialog.toggleAttribute("open")
+}
+
+
+informationButton.addEventListener("click", displayInfo)
 form.addEventListener("submit", onSubmit)

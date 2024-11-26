@@ -17,8 +17,12 @@
 <body>
   <calcite-shell>
     <calcite-navigation slot="header">
-      <calcite-navigation-logo slot="logo" heading="QR Code Generator" description="Ben Beattie | Inspired By Traversy Media" icon="qr-code"></calcite-navigation-logo>
+      <calcite-navigation-logo slot="logo" heading="QR Code Generator" icon="qr-code"></calcite-navigation-logo>
+      <calcite-action id="informationButton" slot="content-end" icon="information" scale="l"></calcite-action>
     </calcite-navigation>
+    <calcite-dialog id="infoDialog" heading="App information" placement="top-end" width-scale="">
+      <p>This app was developed by Ben Beattie with the <calcite-link>Calcite Design System</calcite-link> by ESRI. <br><br> Inspiration from this app came from a &nbsp;<calcite-link icon-start="video-web">Traversy Media video on YouTube.</calcite-link></p>
+    </calcite-dialog>
     <section>
       <section id="wrapper">
         <div id="form-wrapper">
@@ -34,7 +38,7 @@
               <calcite-combobox-item icon="extent" value="400" text-label="400x400"></calcite-combobox-item>
             </calcite-combobox>
           </form>
-          <calcite-button form="form" id="submitButton" type="submit">Generate QR Code</calcite-button>
+          <calcite-button form="form" id="submitButton" icon-start="qr-code" type="submit">Generate QR Code</calcite-button>
         </div>
         <div id="image-wrapper">
           <img src="./images/QR_Code.svg"/>
