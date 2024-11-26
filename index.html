@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="./style.css">
+  <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+  integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+  <script type="module" src="https://js.arcgis.com/calcite-components/2.13.2/calcite.esm.js"></script>
+<link rel="stylesheet" type="text/css" href="https://js.arcgis.com/calcite-components/2.13.2/calcite.css" />
+</head>
+<body>
+  <calcite-shell>
+    <calcite-navigation slot="header">
+      <calcite-navigation-logo slot="logo" heading="QR Code Generator" description="Ben Beattie | Inspired By Traversy Media" icon="qr-code"></calcite-navigation-logo>
+    </calcite-navigation>
+    <section>
+      <section id="wrapper">
+        <div id="form-wrapper">
+          <h1>QR Code Generator</h1>
+          <p>QR Codes allow smartphone users to access your website simply and quickly.</p>
+          <p>Enter your URL below to generate a QR Code and download the image.</p>
+          <form id="form">
+            <calcite-input-text id="urlInput" icon="link" placeholder="Enter a URL"></calcite-input-text>
+            <calcite-combobox id="sizeInput" selection-mode="single">
+              <calcite-combobox-item icon="extent" value="100" text-label="100x100"></calcite-combobox-item>
+              <calcite-combobox-item icon="extent" value="200" text-label="200x200"></calcite-combobox-item>
+              <calcite-combobox-item icon="extent" value="300" text-label="300x300" selected></calcite-combobox-item>
+              <calcite-combobox-item icon="extent" value="400" text-label="400x400"></calcite-combobox-item>
+            </calcite-combobox>
+          </form>
+          <calcite-button form="form" id="submitButton" type="submit">Generate QR Code</calcite-button>
+        </div>
+        <div id="image-wrapper">
+          <img src="./images/QR_Code.svg"/>
+        </div>
+      </section>
+      <section id="output-wrapper">
+        <calcite-loader label="Adjusting polygons..."></calcite-loader>
+        <div id="qrcode-wrapper"></div>
+      </section>
+    </section>
+  </calcite-shell>
+  <script src="./main.js"></script>
+</body>
+</html>

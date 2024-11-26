@@ -1,0 +1,89 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+calcite-loader {
+  display: none;
+}
+
+#wrapper {
+  display: flex;
+  gap: 10px;
+  padding: 5vw 10vw;
+  height: min-content;
+}
+
+#wrapper div {
+  flex-grow: 1;
+}
+
+#form-wrapper {
+  padding-top: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+  width: min-content;
+}
+
+#form-wrapper h1,
+#form-wrapper p {
+  margin: 0;
+}
+
+#form-wrapper h1 {
+  font-size: 32px;
+}
+
+#form-wrapper p {
+  font-size: 18px;
+}
+
+
+#image-wrapper img {
+  width: 300px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  margin-inline: auto;
+}
+
+#form {
+  display: inherit;
+  gap: inherit;
+  flex-direction: inherit;
+}
+
+#output-wrapper {
+  justify-content: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  padding-bottom: 20px;
+}
+
+#qrcode-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+@media (max-width: 750px) {
+  #wrapper {
+    flex-direction: column-reverse;
+    margin-top: 60px;
+  }
+
+  #form-wrapper, #output-wrapper {
+    width: 75vw;
+  }
+}
