@@ -21,7 +21,8 @@
       <calcite-action id="informationButton" slot="content-end" icon="information" scale="l"></calcite-action>
     </calcite-navigation>
     <calcite-dialog id="infoDialog" heading="App information" placement="top-end" width-scale="">
-      <p>This app was developed by Ben Beattie with the <calcite-link>Calcite Design System</calcite-link> by ESRI. <br><br> Inspiration from this app came from a &nbsp;<calcite-link icon-start="video-web">Traversy Media video on YouTube.</calcite-link></p>
+      <p>This app was developed by Ben Beattie with the <calcite-link href="">Calcite Design System</calcite-link> by ESRI. <br><br> Inspiration from this app came from a &nbsp;<calcite-link icon-start="video-web">Traversy Media video on YouTube.</calcite-link></p>
+      <calcite-chip scale="s" icon="calendar">Last Updated 11/26/2024</calcite-chip>
     </calcite-dialog>
     <section>
       <section id="wrapper">
@@ -30,13 +31,28 @@
           <p>QR Codes allow smartphone users to access your website simply and quickly.</p>
           <p>Enter your URL below to generate a QR Code and download the image.</p>
           <form id="form">
-            <calcite-input-text id="urlInput" icon="link" placeholder="Enter a URL"></calcite-input-text>
-            <calcite-combobox id="sizeInput" selection-mode="single">
-              <calcite-combobox-item icon="extent" value="100" text-label="100x100"></calcite-combobox-item>
-              <calcite-combobox-item icon="extent" value="200" text-label="200x200"></calcite-combobox-item>
-              <calcite-combobox-item icon="extent" value="300" text-label="300x300" selected></calcite-combobox-item>
-              <calcite-combobox-item icon="extent" value="400" text-label="400x400"></calcite-combobox-item>
-            </calcite-combobox>
+            <calcite-label>
+              URL:
+              <calcite-input-text id="urlInput" icon="link" placeholder="Enter a URL"></calcite-input-text>
+            </calcite-label>
+            <calcite-label>
+              Size (px):
+              <calcite-combobox id="sizeInput" selection-mode="single">
+                <calcite-combobox-item icon="extent" value="100" text-label="100x100"></calcite-combobox-item>
+                <calcite-combobox-item icon="extent" value="200" text-label="200x200"></calcite-combobox-item>
+                <calcite-combobox-item icon="extent" value="300" text-label="300x300" selected></calcite-combobox-item>
+                <calcite-combobox-item icon="extent" value="400" text-label="400x400"></calcite-combobox-item>
+              </calcite-combobox>
+            </calcite-label>
+            <calcite-label>
+              Color:
+              <calcite-chip-group id="colorChipGroup" selection-mode="single-persist">
+                <calcite-chip value="black" selected>Black</calcite-chip>
+                <calcite-chip value="red">Red</calcite-chip>
+                <calcite-chip value="green">Green</calcite-chip>
+                <calcite-chip value="blue">Blue</calcite-chip>
+              </calcite-chip-group>
+            </calcite-label>
           </form>
           <calcite-button form="form" id="submitButton" icon-start="qr-code" type="submit">Generate QR Code</calcite-button>
         </div>

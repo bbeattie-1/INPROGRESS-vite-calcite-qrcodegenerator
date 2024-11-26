@@ -58,7 +58,7 @@ calcite-loader {
 
 #form {
   display: inherit;
-  gap: inherit;
+  /* gap: inherit; */
   flex-direction: inherit;
 }
 
@@ -79,6 +79,28 @@ calcite-loader {
 
 #qrcode-wrapper img {
   box-shadow: 2px 2px 10px ;
+}
+
+#colorChipGroup calcite-chip[value="black"] {
+  --calcite-color-brand: black;
+  --calcite-color-text-1: black;
+}
+#colorChipGroup calcite-chip[value="red"] {
+  --calcite-color-brand: red;
+  --calcite-color-text-1: red;
+}
+#colorChipGroup calcite-chip[value="green"] {
+  --calcite-color-brand: green;
+  --calcite-color-text-1: green;
+}
+#colorChipGroup calcite-chip[value="blue"] {
+  --calcite-color-brand: blue;
+  --calcite-color-text-1: blue;
+}
+
+#colorChipGroup {
+  /* display: flex; */
+  justify-content: space-between !important;
 }
 
 @media (max-width: 750px) {
