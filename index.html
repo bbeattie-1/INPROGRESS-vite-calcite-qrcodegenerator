@@ -33,11 +33,11 @@
           <form id="form">
             <calcite-label>
               URL:
-              <calcite-input-text id="urlInput" icon="link" placeholder="Enter a URL"></calcite-input-text>
+              <calcite-input-text id="urlInput" icon="link" placeholder="www.google.com"></calcite-input-text>
             </calcite-label>
             <calcite-label>
               Size (px):
-              <calcite-combobox id="sizeInput" selection-mode="single">
+              <calcite-combobox  id="sizeInput" selection-mode="single">
                 <calcite-combobox-item icon="extent" value="100" text-label="100x100"></calcite-combobox-item>
                 <calcite-combobox-item icon="extent" value="200" text-label="200x200"></calcite-combobox-item>
                 <calcite-combobox-item icon="extent" value="300" text-label="300x300" selected></calcite-combobox-item>
@@ -46,20 +46,26 @@
             </calcite-label>
             <calcite-label>
               Color:
-              <calcite-chip-group id="colorChipGroup" selection-mode="single-persist">
-                <calcite-chip value="black" selected>Black</calcite-chip>
-                <calcite-chip value="red">Red</calcite-chip>
-                <calcite-chip value="green">Green</calcite-chip>
-                <calcite-chip value="blue">Blue</calcite-chip>
+              <!-- <calcite-color-picker hidden id="colorPicker"></calcite-color-picker> -->
+              <calcite-chip-group scale="m" id="colorChipGroup" selection-mode="single-persist">
+                <calcite-chip value="#000" selected>Black</calcite-chip>
+                <calcite-chip value="#f00">Red</calcite-chip>
+                <calcite-chip value="#008000">Green</calcite-chip>
+                <calcite-chip value="#00f">Blue</calcite-chip>
+                <!-- <calcite-chip value="custom" icon="palette">Custom</calcite-chip> -->
               </calcite-chip-group>
             </calcite-label>
           </form>
-          <calcite-button form="form" id="submitButton" icon-start="qr-code" type="submit">Generate QR Code</calcite-button>
+          <calcite-button kind="inverse" form="form" id="submitButton" icon-start="qr-code" type="submit">Generate QR Code</calcite-button>
         </div>
         <div id="image-wrapper">
           <img src="./images/QR_Code.svg"/>
         </div>
       </section>
+      <calcite-alert id="emptyURLAlert"  auto-close-duration="fast" auto-close icon="exclamation-mark-circle" open label="A report alert" kind="danger" placement="top">
+        <div slot="title">URL Required</div>
+        <div slot="message">This field requires a URL. Please enter a valid web address.</div>
+    </calcite-alert>
       <section id="output-wrapper">
         <calcite-loader label="Adjusting polygons..."></calcite-loader>
         <div id="qrcode-wrapper"></div>
